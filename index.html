@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-task.html">Add Task</a>
+            <a href="task-list.html">Task List</a>
+            <a href="task-detail.html">Task Detail</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to TaskFlow!</h1>
+        
+        <div class="card">
+            <h2>Dashboard</h2>
+            <p>Your personal task management solution.</p>
+            
+            <div style="display: flex; gap: 20px; margin-top: 20px;">
+                <div class="card" style="flex: 1; text-align: center;">
+                    <h3>Total Tasks</h3>
+                    <p style="font-size: 36px; color: #3498db;" id="totalTasks">0</p>
+                </div>
+                <div class="card" style="flex: 1; text-align: center;">
+                    <h3>Pending</h3>
+                    <p style="font-size: 36px; color: #e74c3c;" id="pendingTasks">0</p>
+                </div>
+                <div class="card" style="flex: 1; text-align: center;">
+                    <h3>Completed</h3>
+                    <p style="font-size: 36px; color: #27ae60;" id="completedTasks">0</p>
+                </div>
+            </div>
+            
+            <a href="add-task.html" class="btn" style="margin-top: 20px;">+ Add New Task</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>TaskFlow - Simplify Your Tasks</p>
+    </footer>
+
+    <script>
+        function loadTasks() {
+            const tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
+            const total = tasks.length;
+            const pending = tasks.filter(function(t) { return t.status !== 'completed'; }).length;
+            const completed = tasks.filter(function(t) { return t.status === 'completed'; }).length;
+            document.getElementById('totalTasks').textContent = total;
+            document.getElementById('pendingTasks').textContent = pending;
+            document.getElementById('completedTasks').textContent = completed;
+        }
+        loadTasks();
+    </script>
+</body>
+</html>
