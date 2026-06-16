@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-task.html">Add Task</a>
+            <a href="task-list.html">Task List</a>
+            <a href="task-detail.html">Task Detail</a>
+            <a href="profile.html">Profile</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>User Profile</h1>
+
+        <div class="card">
+            <h2>Profile Information</h2>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" value="Team Member" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="joinDate">Join Date</label>
+                    <input type="date" id="joinDate" name="joinDate" readonly>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    Save Profile
+                </button>
+
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>TaskFlow - Simplify Your Tasks | Developed by Team Lead</p>
+    </footer>
+
+    <script>
+        // Auto-fill join date (today's date if empty)
+        document.getElementById("joinDate").value = new Date().toISOString().split('T')[0];
+    </script>
+
+</body>
+</html>
