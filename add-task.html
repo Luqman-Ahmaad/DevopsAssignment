@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Add Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="add-task.html">Add Task</a>
+            <a href="task-list.html">Task List</a>
+            <a href="task-detail.html">Task Detail</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Add New Task</h1>
+
+        <div class="card">
+            <h2>Task Information</h2>
+
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="title">Task Title</label>
+                    <input type="text" id="title" name="title" placeholder="Enter task title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="5" placeholder="Enter task description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="dueDate">Due Date</label>
+                    <input type="date" id="dueDate" name="dueDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="priority">Priority</label>
+                    <select id="priority" name="priority" required>
+                        <option value="">Select Priority</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-success">
+                    Add Task
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>TaskFlow - Simplify Your Tasks | Developed by Team Lead</p>
+    </footer>
+</body>
+</html>
